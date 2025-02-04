@@ -93,8 +93,7 @@ h6 {
 }
 #ticket {
   background-image: url("../assets/images/pattern-ticket.svg");
-  height: 100%;
-  background-size: 100%;
+  background-size: contain;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -102,8 +101,16 @@ h6 {
   margin-bottom: 2rem;
   gap: 1rem;
   padding: 1.5rem;
+  aspect-ratio: 15/7;
+  text-align: left;
 }
 .ticket-image {
   height: 4em;
   border-radius: 10px;
+}
+
+#view-div {
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }

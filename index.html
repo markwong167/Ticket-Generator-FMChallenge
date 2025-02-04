@@ -113,11 +113,14 @@
 
       <!-- Generated tickets starts -->
       <div id="view-div" style="display: none">
-        <h1>
-          Congrats,
-          <span id="nameDisplay" class="gradient"></span>! Your ticket is ready.
-        </h1>
-        <p>
+        <div style="max-width: 60%">
+          <h1>
+            Congrats,
+            <span id="nameDisplay" class="gradient"></span>!
+          </h1>
+          <h1>Your ticket is ready.</h1>
+        </div>
+        <p style="max-width: 40%">
           <span> We've emailed your ticket to</span>
           <span id="emailDisplay"></span>
           <span> and will send updates in the run up to the event.</span>
@@ -127,8 +130,12 @@
             <h1>Coding Conf</h1>
             <p>Jan 31, 2025 / Austin, TX</p>
           </div>
-          <div style="display: flex">
-            <img class="ticket-image" src="./assets/images/image-avatar.jpg" />
+          <div style="display: flex; padding: 0.5rem 0">
+            <img
+              id="ticketImageDisplay"
+              class="ticket-image"
+              src="./assets/images/image-avatar.jpg"
+            />
             <div style="display: flex; flex-direction: column; gap: 0.3rem">
               <span id="nameDisplayTicket"></span>
               <span id="githubUsernameDisplay"></span>

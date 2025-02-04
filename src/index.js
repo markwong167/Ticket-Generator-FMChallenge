@@ -1,4 +1,4 @@
-let ticketStorage = { fullName: "", email: "", githubUsername: "", image: "" };
+let ticketImage = {};
 
 function handleUpload(event) {
   let imageFile = {};
@@ -15,6 +15,7 @@ function handleUpload(event) {
   imageDropzone.style.display = "none";
   uploadedImage.style.display = "block";
   uploadedImage.src = URL.createObjectURL(imageFile);
+  ticketImage = imageFile;
   event.preventDefault();
 }
 function handleDragOver(event) {
@@ -26,7 +27,7 @@ function handleSubmit(event) {
   const formDiv = document.getElementById("form-div");
   const viewDiv = document.getElementById("view-div");
   formDiv.style.display = "none";
-  viewDiv.style.display = "block";
+  viewDiv.style.display = "flex";
   const form = event.target;
   const formData = new FormData(form);
   const name = formData.get("name");
@@ -53,6 +54,8 @@ function handleSubmit(event) {
   document.getElementById("emailDisplay").textContent = `${urlParams.get(
     "email"
   )}`;
+  const imageUrl = URL.createObjectURL(ticketImage);
+  document.getElementById("ticketImageDisplay").src = imageUrl;
   document.getElementById(
     "githubUsernameDisplay"
   ).textContent = `${urlParams.get("githubUsername")}`;
