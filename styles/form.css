@@ -1,3 +1,20 @@
+@media (max-width: 600px) {
+  .ticket-generation-form {
+    width: 100%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1250px) {
+  .ticket-generation-form {
+    width: 50%;
+  }
+}
+@media (min-width: 1251px) {
+  .ticket-generation-form {
+    width: 40%;
+  }
+}
+
 #form-div {
   display: flex;
   flex-direction: column;
@@ -17,13 +34,14 @@
 #uploaded-image {
   display: none;
   max-height: 300px;
+  max-width: 95vw;
+  object-fit: contain;
 }
 
 .ticket-generation-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 60%;
 }
 
 .form-field {
@@ -50,4 +68,26 @@
   font-size: medium;
   color: hsl(248, 70%, 10%);
   background-color: hsl(7, 88%, 67%);
+}
+
+.github-user-div {
+  display: flex;
+  align-items: center;
+}
+#github-user {
+  border-radius: 0 10px 10px 0;
+}
+
+.github-user-div .form-input {
+  width: 100%;
+}
+
+.at-symbol {
+  font-size: 16px;
+  font-weight: bold;
+  border: solid hsla(252, 6%, 83%, 0.8) 1px;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  padding: 0.5rem;
+  background-color: hsl(245, 19%, 35%, 0.6);
 }

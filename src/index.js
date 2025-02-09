@@ -9,7 +9,6 @@ function handleUpload(event) {
   } else {
     console.error("file not accepted");
   }
-  console.log(imageFile);
   const uploadedImage = document.getElementById("uploaded-image");
   const imageDropzone = document.getElementById("image-dropzone");
   imageDropzone.style.display = "none";
@@ -30,12 +29,6 @@ function handleSubmit(event) {
   viewDiv.style.display = "flex";
   const form = event.target;
   const formData = new FormData(form);
-  const name = formData.get("name");
-  const email = formData.get("email");
-  const githubUsername = formData.get("githubUsername");
-  console.log("Name:", name);
-  console.log("Email:", email);
-  console.log("Github Username:", githubUsername);
   sessionStorage.setItem("fullName", formData.get("name"));
   sessionStorage.setItem("email", formData.get("email"));
   sessionStorage.setItem("githubUsername", formData.get("githubUsername"));
@@ -45,6 +38,7 @@ function handleSubmit(event) {
     githubUsername: formData.get("githubUsername"),
   });
   const urlParams = new URLSearchParams(params);
+  const newId = "#" + Math.floor(Math.random() * 100000);
   document.getElementById("nameDisplay").textContent = `${urlParams.get(
     "name"
   )}`;
@@ -56,7 +50,8 @@ function handleSubmit(event) {
   )}`;
   const imageUrl = URL.createObjectURL(ticketImage);
   document.getElementById("ticketImageDisplay").src = imageUrl;
+  document.getElementById("id-number").textContent = newId;
   document.getElementById(
     "githubUsernameDisplay"
-  ).textContent = `${urlParams.get("githubUsername")}`;
+  ).textContent = `@${urlParams.get("githubUsername")}`;
 }

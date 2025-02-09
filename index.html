@@ -65,9 +65,13 @@
               />
               <p>Drag and drop or click to upload</p>
             </label>
-            <span>
-              <img src="./assets/images/icon-info.svg" alt="info icon" />
-              Upload your photo (JPG, JPEG, PNG, or WEBP max size: 500KB).
+            <span class="caption-text">
+              <img
+                src="./assets/images/icon-info.svg"
+                alt="info icon"
+                style="margin-right: 0.2rem"
+              />
+              Upload your photo (JPG or PNG max size: 500KB).
             </span>
           </div>
           <div class="form-field">
@@ -93,14 +97,17 @@
           </div>
           <div class="form-field">
             <label>GitHub Username</label>
-            <input
-              class="form-input"
-              placeholder="@yourusername"
-              type="text"
-              id="github-user"
-              name="githubUsername"
-              required
-            />
+            <div class="github-user-div">
+              <span class="at-symbol">@</span>
+              <input
+                class="form-input"
+                placeholder="yourusername"
+                type="text"
+                id="github-user"
+                name="githubUsername"
+                required
+              />
+            </div>
           </div>
           <div class="form-field">
             <button class="generate-ticket-button" type="submit">
@@ -113,34 +120,53 @@
 
       <!-- Generated tickets starts -->
       <div id="view-div" style="display: none">
-        <div style="max-width: 60%">
-          <h1>
+        <div style="flex-direction: column">
+          <h1 class="title-heading" style="width: 100%; display: block">
             Congrats,
             <span id="nameDisplay" class="gradient"></span>!
           </h1>
-          <h1>Your ticket is ready.</h1>
+          <h1 class="title-heading" style="width: 100%">
+            Your ticket is ready.
+          </h1>
         </div>
-        <p style="max-width: 40%">
-          <span> We've emailed your ticket to</span>
+        <p class="sub-text" style="padding: 1rem; color: hsl(252, 6%, 83%)">
+          <span> We've emailed your ticket to&nbsp;</span>
           <span id="emailDisplay"></span>
-          <span> and will send updates in the run up to the event.</span>
+          <span>&nbsp;and will send updates in the run up to the event.</span>
         </p>
         <div id="ticket">
           <div style="display: flex; flex-direction: column; gap: 0.3rem">
-            <h1>Coding Conf</h1>
-            <p>Jan 31, 2025 / Austin, TX</p>
+            <img
+              style="width: 70%"
+              src="./assets/images/logo-full.svg"
+              alt="Coding Conference Logo"
+            />
+            <p
+              class="caption-text"
+              style="padding-bottom: 0.6rem; margin-left: 3rem"
+            >
+              Jan 31, 2025 / Austin, TX
+            </p>
           </div>
-          <div style="display: flex; padding: 0.5rem 0">
+          <div style="display: flex; padding-bottom: 1rem">
             <img
               id="ticketImageDisplay"
-              class="ticket-image"
+              class="avatar-image"
               src="./assets/images/image-avatar.jpg"
             />
             <div style="display: flex; flex-direction: column; gap: 0.3rem">
               <span id="nameDisplayTicket"></span>
-              <span id="githubUsernameDisplay"></span>
+              <span class="caption-text">
+                <img
+                  src="./assets/images/icon-github.svg"
+                  alt="info icon"
+                  style="margin-right: 0.2rem"
+                />
+                <span id="githubUsernameDisplay"></span>
+              </span>
             </div>
           </div>
+          <p id="id-number"></p>
         </div>
       </div>
       <!-- Generated tickets ends -->
