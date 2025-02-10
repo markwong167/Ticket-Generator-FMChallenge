@@ -10,6 +10,9 @@
   .title-heading {
     width: 95%;
   }
+  .attribution {
+    position: relative;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 1250px) {
@@ -23,6 +26,9 @@
   .sub-text {
     width: 60%;
   }
+  .attribution {
+    position: absolute;
+  }
 }
 @media (min-width: 1251px) {
   .main-container {
@@ -34,6 +40,9 @@
   }
   .sub-text {
     width: 60%;
+  }
+  .attribution {
+    position: absolute;
   }
 }
 
@@ -67,7 +76,6 @@ h6 {
 }
 
 .attribution {
-  position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
 }
