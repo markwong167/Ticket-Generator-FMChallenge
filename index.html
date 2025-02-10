@@ -46,19 +46,24 @@
           <div class="form-field">
             <p style="margin: 0">Upload Avatar</p>
             <img id="uploaded-image" />
+            <input
+              type="file"
+              onchange="handleUpload(event)"
+              name="fileUploadInput"
+              id="fileUploadInput"
+              accept="image/png, image/jpeg, image/jpg"
+              style="display: none"
+            />
             <label
               id="image-dropzone"
+              for="fileUploadInput"
               ondrop="handleUpload(event)"
               ondragover="handleDragOver(event)"
+              onfocus="this.style.outline='2px solid blue'"
+              onblur="this.style.outline='none'"
+              tabindex="0"
+              onkeydown="if (event.key === 'Enter' || event.key === ' ') {document.getElementById('fileUploadInput').click();}"
             >
-              <input
-                type="file"
-                onchange="handleUpload(event)"
-                name="fileUploadInput"
-                id="fileUploadInput"
-                accept="image/png, image/jpeg, image/webp, image/jpg"
-                style="display: none"
-              />
               <img
                 src="./assets/images/icon-upload.svg"
                 alt="icon for uploading"
@@ -116,7 +121,12 @@
             </div>
           </div>
           <div class="form-field">
-            <button class="generate-ticket-button" type="submit">
+            <button
+              class="generate-ticket-button"
+              type="submit"
+              onfocus="this.style.outline='2px solid blue'"
+              onblur="this.style.outline='none'"
+            >
               Generate My Ticket
             </button>
           </div>
