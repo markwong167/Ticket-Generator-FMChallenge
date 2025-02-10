@@ -73,6 +73,9 @@
               />
               Upload your photo (JPG or PNG max size: 500KB).
             </span>
+            <p id="ticket-form-image-error" class="error-text">
+              Error: you did not upload a valid image
+            </p>
           </div>
           <div class="form-field">
             <label>Full Name</label>
@@ -123,7 +126,7 @@
         <div style="flex-direction: column">
           <h1 class="title-heading" style="width: 100%; display: block">
             Congrats,
-            <span id="nameDisplay" class="gradient"></span>!
+            <span id="name-display" class="gradient"></span>!
           </h1>
           <h1 class="title-heading" style="width: 100%">
             Your ticket is ready.
@@ -131,7 +134,7 @@
         </div>
         <p class="sub-text" style="padding: 1rem; color: hsl(252, 6%, 83%)">
           <span> We've emailed your ticket to&nbsp;</span>
-          <span id="emailDisplay"></span>
+          <span id="email-display"></span>
           <span>&nbsp;and will send updates in the run up to the event.</span>
         </p>
         <div id="ticket">
@@ -150,19 +153,19 @@
           </div>
           <div style="display: flex; padding-bottom: 1rem">
             <img
-              id="ticketImageDisplay"
+              id="ticket-image-display"
               class="avatar-image"
               src="./assets/images/image-avatar.jpg"
             />
             <div style="display: flex; flex-direction: column; gap: 0.3rem">
-              <span id="nameDisplayTicket"></span>
+              <span id="name-display-ticket"></span>
               <span class="caption-text">
                 <img
                   src="./assets/images/icon-github.svg"
                   alt="info icon"
                   style="margin-right: 0.2rem"
                 />
-                <span id="githubUsernameDisplay"></span>
+                <span id="github-username-display"></span>
               </span>
             </div>
           </div>
