@@ -1,4 +1,6 @@
 let ticketImage = undefined;
+const ticketImageErrorMessage = "Error: you did not upload a valid image.";
+const uploadImageErrorMessage = "file not accepted";
 
 function handleUpload(event) {
   let imageFile = {};
@@ -7,7 +9,7 @@ function handleUpload(event) {
   } else if (event.target?.files?.[0]) {
     imageFile = event.target?.files?.[0];
   } else {
-    console.error("file not accepted");
+    console.error(uploadImageErrorMessage);
   }
   const uploadedImage = document.getElementById("uploaded-image");
   const imageDropzone = document.getElementById("image-dropzone");
@@ -27,7 +29,9 @@ function handleSubmit(event) {
   const formData = new FormData(form);
 
   if (ticketImage === undefined) {
-    document.getElementById("ticket-form-image-error").src = imageUrl;
+    console.error(ticketImageErrorMessage);
+    document.getElementById("ticket-form-image-error").textContent =
+      ticketImageErrorMessage;
   } else {
     //Hide form, show ticket
     const formDiv = document.getElementById("form-div");
