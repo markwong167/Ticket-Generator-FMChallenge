@@ -1,7 +1,20 @@
 let ticketImage = undefined;
 const ticketImageErrorMessage = "Error: you did not upload a valid image.";
-const uploadImageErrorMessage = "file not accepted";
-
+const uploadImageErrorMessage = "File not accepted";
+const somethingWrongErrorMessage = "Something wrong happened";
+const imageWrongSizeErrorMessage =
+  "Error: please upload an image smaller than 500KB";
+const imageWrongTypeErrorMessage = "Error: please upload a JPG or PNG";
+const emailWrongErrorMessage = "Please enter a valid email";
+const acceptableImageTypes = ["image/jpeg", "image/jpg", "image/png"];
+const validateEmail = (email) => {
+  if (typeof email === "string") {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    return emailRegex.test(email.toLowerCase());
+  } else {
+    return null;
+  }
+};
 function handleUpload(event) {
   let imageFile = {};
   if (event.dataTransfer) {
@@ -11,12 +24,22 @@ function handleUpload(event) {
   } else {
     console.error(uploadImageErrorMessage);
   }
+  if (imageFile?.size > 500000) {
+    document.getElementById("ticket-form-image-error").textContent =
+      imageWrongSizeErrorMessage;
+    return;
+  } else if (!acceptableImageTypes.includes(imageFile?.type)) {
+    document.getElementById("ticket-form-image-error").textContent =
+      imageWrongTypeErrorMessage;
+    return;
+  }
   const uploadedImage = document.getElementById("uploaded-image");
   const imageDropzone = document.getElementById("image-dropzone");
   imageDropzone.style.display = "none";
   uploadedImage.style.display = "block";
   uploadedImage.src = URL.createObjectURL(imageFile);
   ticketImage = imageFile;
+  document.getElementById("ticket-form-image-error").textContent = "";
   event.preventDefault();
 }
 function handleDragOver(event) {
@@ -32,6 +55,14 @@ function handleSubmit(event) {
     console.error(ticketImageErrorMessage);
     document.getElementById("ticket-form-image-error").textContent =
       ticketImageErrorMessage;
+  } else if (validateEmail(formData.get("email")) === null) {
+    const emailError = document.getElementById("ticket-form-email-error");
+    emailError.style.display = "block";
+    emailError.textContent = somethingWrongErrorMessage;
+  } else if (validateEmail(formData.get("email")) === false) {
+    const emailError = document.getElementById("ticket-form-email-error");
+    emailError.style.display = "block";
+    emailError.textContent = emailWrongErrorMessage;
   } else {
     //Hide form, show ticket
     const formDiv = document.getElementById("form-div");
