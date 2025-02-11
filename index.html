@@ -42,10 +42,19 @@
         <p class="sub-text">
           Secure your spot at next year's biggest coding conference.
         </p>
-        <form class="ticket-generation-form" onsubmit="handleSubmit(event)">
-          <div class="form-field">
-            <p style="margin: 0">Upload Avatar</p>
-            <img id="uploaded-image" />
+        <form
+          class="ticket-generation-form"
+          onsubmit="handleSubmit(event)"
+          role="form"
+          aria-label="Conference ticket registration form"
+        >
+          <div
+            class="form-field"
+            role="group"
+            aria-labelledby="avatar-upload-label"
+          >
+            <p id="avatar-upload-label" style="margin: 0">Upload Avatar</p>
+            <img id="uploaded-image" alt="" aria-hidden="true" />
             <input
               type="file"
               onchange="handleUpload(event)"
@@ -63,6 +72,7 @@
               onblur="this.style.outline='none'"
               tabindex="0"
               onkeydown="if (event.key === 'Enter' || event.key === ' ') {document.getElementById('fileUploadInput').click();}"
+              aria-label="Upload your photo (JPG or PNG max size: 500KB)"
             >
               <img
                 src="./assets/images/icon-upload.svg"
@@ -80,18 +90,19 @@
             </span>
             <p id="ticket-form-image-error" class="error-text"></p>
           </div>
-          <div class="form-field">
-            <label>Full Name</label>
+          <div class="form-field" role="group" aria-labelledby="name-label">
+            <label id="name-label" for="name">Full Name</label>
             <input
               class="form-input"
               type="text"
               id="name"
               name="name"
               required
+              aria-label="Enter your full name"
             />
           </div>
-          <div class="form-field">
-            <label>Email Address</label>
+          <div class="form-field" role="group" aria-labelledby="email-label">
+            <label id="email-label" for="email">Email Address</label>
             <input
               class="form-input"
               placeholder="example@email.com"
@@ -99,6 +110,7 @@
               id="email"
               name="email"
               required
+              aria-label="Enter your email address"
             />
           </div>
           <p
@@ -106,8 +118,8 @@
             style="display: none"
             class="error-text"
           ></p>
-          <div class="form-field">
-            <label>GitHub Username</label>
+          <div class="form-field" role="group" aria-labelledby="github-label">
+            <label id="github-label" for="github-user">GitHub Username</label>
             <div class="github-user-div">
               <span class="at-symbol">@</span>
               <input
@@ -117,6 +129,7 @@
                 id="github-user"
                 name="githubUsername"
                 required
+                aria-label="Enter your GitHub username"
               />
             </div>
           </div>
@@ -126,6 +139,7 @@
               type="submit"
               onfocus="this.style.outline='2px solid blue'"
               onblur="this.style.outline='none'"
+              aria-label="Generate your ticket"
             >
               Generate My Ticket
             </button>
@@ -135,7 +149,12 @@
       <!-- Form ends -->
 
       <!-- Generated tickets starts -->
-      <div id="view-div" style="display: none">
+      <div
+        id="view-div"
+        style="display: none"
+        role="region"
+        aria-label="Generated ticket details"
+      >
         <div style="flex-direction: column">
           <h1 class="title-heading" style="width: 100%; display: block">
             Congrats,
@@ -150,7 +169,7 @@
           <span id="email-display"></span>
           <span>&nbsp;and will send updates in the run up to the event.</span>
         </p>
-        <div id="ticket">
+        <div id="ticket" role="region" aria-label="Conference ticket">
           <div style="display: flex; flex-direction: column; gap: 0.3rem">
             <img
               style="width: 70%"
