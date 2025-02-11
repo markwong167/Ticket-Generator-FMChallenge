@@ -144,3 +144,11 @@ h6 {
   color: hsl(252, 6%, 83%, 0.8);
   transform: translateY(-50%) rotate(90deg);
 }
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

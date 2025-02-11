@@ -15,6 +15,7 @@ const validateEmail = (email) => {
     return null;
   }
 };
+
 function handleUpload(event) {
   let imageFile = {};
   if (event.dataTransfer) {
@@ -42,6 +43,7 @@ function handleUpload(event) {
   document.getElementById("ticket-form-image-error").textContent = "";
   event.preventDefault();
 }
+
 function handleDragOver(event) {
   event.preventDefault();
 }

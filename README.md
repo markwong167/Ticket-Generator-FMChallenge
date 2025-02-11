@@ -1,8 +1,6 @@
 # Frontend Mentor - Conference ticket generator
 
-Vanilla JavaScript, HTML, CSS
-
-I wanted to challenge myself to build this project using only vanilla JavaScript, HTML, and CSS.
+I wanted to challenge myself to build this project using vanilla JavaScript, HTML5, and CSS3.
 It was a fun challenge and I learned a lot more about making forms accessible.
 
 - [Overview](#overview)
@@ -11,11 +9,11 @@ It was a fun challenge and I learned a lot more about making forms accessible.
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+  - [Useful tools](#useful-tools)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
+
+## Overview
 
 ### The challenge
 
@@ -33,3 +31,31 @@ Users should be able to:
 ### Screenshot
 
 ![](./assets/images/Screenshot%202025-02-10%20at%2020-08-13%20Conference%20Ticket%20Generator.png)
+
+### Links
+
+- [Solution](https://github.com/markwong167/Ticket-Generator-FMChallenge/)
+- [Live Site](https://ticket-generator-fm-challenge.vercel.app/)
+
+## My process
+
+### Built with
+
+- Vanilla JavaScript
+- HTML5
+- CSS3
+
+### Continued development
+
+- Integrate it into an actual web application
+
+### Useful tools
+
+- Prettier: never go without a code formatter
+- VSCode: my go-to IDE
+- ONLY when you get really stuck after exhausting all other options should you use AI code assistants for this challenge, or when it's mundane tasks like writing this README.md file.
+
+## Author
+
+- Website - [Mark Wong](https://www.markwong.dev)
+- Frontend Mentor - [@markwong167](https://www.frontendmentor.io/profile/markwong167)
